@@ -1,0 +1,53 @@
+body{
+    background: url(../images/riot.background.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#title {
+    text-align: right;
+    color: white;
+    margin-top: 2%;
+}
+
+img {
+    align-content: center;
+    align-self: center;
+}
+
+.card{
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    float: left;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.card-body {
+    padding: 5px;
+}
+
+h2{
+    color: white;
+    margin-left: 1%;
+    font-size: 20px;
+}
+
+.btn {
+    margin-top: 10px;
+}
+.btn-warning {
+    float: right;
+}
+
+#notifications{
+    text-align: center;
+}
+
+#player-box {
+    float: left;
+}
+#adversary-box {
+    align-self: right;
+}

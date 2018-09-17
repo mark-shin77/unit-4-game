@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- CSS Reset -->
+        <link rel="stylesheet" href="assets/css/reset.css">
+    <!-- BootStrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- My CSS File -->    
+        <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Jquery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <!-- My Javascript-->
+        <script src="assets/javascript/game.js"></script>
+
+        <title>RPG Game</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <h1 id="title">League of Legends RPG!</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card champion opponents Leblanc" style="width: 9rem;">
+                        <img src="assets/images/leblanc.jpg" alt="Le Blanc" height="140" width="130">
+                        <div class="card-body">
+                          <p class="card-text">Le Blanc</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card champion opponents Orianna" style="width: 9rem;">
+                        <img src="assets/images/orianna.jpg" alt="Orianna" height="140" width="130">
+                        <div class="card-body">
+                          <p class="card-text">Orianna</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="card champion opponents Ahri" style="width: 9rem;">
+                            <img src="assets/images/ahri.png" alt="Ahri" height="140" width="130">
+                            <div class="card-body">
+                              <p class="card-text">Ahri</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="card champion opponents Syndra" style="width: 9rem;">
+                            <img src="assets/images/syndra.jpeg" alt="Ahri" height="140" width="130">
+                            <div class="card-body">
+                              <p class="card-text">Syndra</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12" id="button-box">
+                    <h2><button type="button" class="btn btn-light">Attack</button>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12" id="button-box">
+                    <h2><button type="button" class="btn btn-warning">Reset</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12" id="player-box">
+                    <div class="mx-auto" style="width: 300px;">
+                        <h2>Your Champion</h2>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12" id="player-box">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-6 col-sm-12" id="info-box"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12" id="adversary-box">
+                    <div class="mx-auto" style="width: 300px;">
+                        <h2>Defender</h2>
+                    </div>                
+                </div>
+            </div>
+            <div class="row">
+            </div>
+            <div class="row">
+                <div class= "col-lg-12 col-md-6 col-sm-12" id="notifications">
+                    <p class="text-center">
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12" id="opponents-box">
+                    <h2>Enemies Available To Attack</h2>
+                </div>
+            </div>
+        </div>
+    
+    </body>
+</html>
