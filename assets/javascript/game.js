@@ -81,11 +81,12 @@ $(document).ready(function(){
                 userPlayer = syndra;
             };
     // Adds player info
-            $("#info-box").appendTo(userPlayer.Name+ " vs ");
-            $(".card-text").append("<br>" + "Health: " + userPlayer.Health + "<br>");
-            $(".card-text").append("Attack: " + userPlayer.Attack + "<br>");
-            $(".card-text").append("Counter: " + userPlayer.Counter + "<br>");
-            $(".text-center").text("Select an opponent to attack");
+            $("#info-box").html(userPlayer.Name+ " vs ");
+            $("#player-box").append(userPlayer.Name);
+            $("#player-box").append("<br>" + "Health: " + userPlayer.Health + "<br>");
+            $("#player-box").append("Attack: " + userPlayer.Attack + "<br>");
+            $("#player-box").append("Counter: " + userPlayer.Counter + "<br>");
+            $("#notifications").text("Select an opponent to attack");
             startingValue = userPlayer.Attack;
 
         }
@@ -111,8 +112,64 @@ $(document).ready(function(){
             };
 
             $("#info-box").html(userPlayer.Name + " vs " + currentOpponent.Name);
+            $("#adversary-box").append("<br>" + "Health: " + currentOpponent.Health + "<br>");
+            $("#adversary-box").append("Attack: " + currentOpponent.Attack + "<br>");
+            $("#adversary-box").append("Counter: " + currentOpponent.Counter + "<br>");
+            $("#notifications").text("");
         };
 
     });
+
+    // Using the attack button
+    $(".attack-button").on('click', function (){
+        if (currentOpponent.Health > 0) {
+            // Explaining to user what happened
+            $('#notifications').text("You attacked " + currentOpponent.Name + " for " + userPlayer.Attack +
+                " damage. She counterattacked for " + currentOpponent.Counter + " damage.");
+            
+            // Code to do damage to opponent and take damage viva "Counter"
+            currentOpponent.Health = currentOpponent.Health - userPlayer.Attack;
+            userPlayer.Health = userPlayer.Health - currentOpponent.Counter;
+            userPlayer.Attack = userPlayer.Attack + startingValue;
+            
+            console.log (currentOpponent.Health);
+            console.log (userPlayer.Health);
+            console.log ($("#player-info"));
+
+            // Changing health values of selected champion and opponent
+            $("#player-info").text("<br>" + "Health: " + userPlayer.Health + "<br>");
+            // $("#player-info").append("Attack: " + userPlayer.Attack + "<br>");
+            // $("#player-info") .append("Counter: " + userPlayer.Counter + "<br>");
+
+            // $("#player-info").empty();
+
+            // Check if opponent has been defeated
+            if (currentOpponent.Health <= 0) {
+                $("#notifications").text("You have defeated " + currentOpponent.Name 
+                    + "! Pick another opponent to continue!");
+                opponentsDefeated = opponentsDefeated + 1;
+                opponentChosen = false;
+                $("#adversary-box").empty();
+            }
+
+            // Check to see if all opponents have been defeated
+            if (opponentsDefeated === 3) {
+                $("#notifications").text("Congratulations! You Win!");
+                $("#info-box").text("");
+                $(".champion").animate({height: '500px'});
+            }
+
+            // Check to see if user has been defeated
+            if (userPlayer.Health <= 0){
+                $("#notifications").text("You have been defeated, better luck next time!");
+                reset();
+            }
+        }
+    });
+
+    $(".reset-button").on('click', function (){
+        location.reload();
+    });
+
 
 });
